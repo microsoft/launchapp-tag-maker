@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="LaunchApp_tag_maker.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="LaunchApp Tag Maker" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Instructions" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" TextWrapping="Wrap">
+                <Bold>Welcome to LaunchApp Tag Maker</Bold>
+                <LineBreak/>It allows you to create LaunchApp tag that could launch any apps available on store or installed.
+                <LineBreak/>We provide a list of Nokia apps for you to create tags for demo purpose. If you target for a specific app, then you need to obtain the app id. There are two ways to get the app id:
+                <LineBreak/>1. Visit http://www.windowsphone.com/en-us/store
+                <LineBreak/>2. Go to app list view, long press your app, click "share", choose any email account, and copy the string after "?appid=" from the URL.
+                <LineBreak/>For example, Nokia Music's app id is like below:
+                <LineBreak/>f5874252-1f04-4c3f-a335-4fa3b7b85329
+                <LineBreak/>Once you have the app id, then you can use this app to creata tag for it. 
+                <LineBreak/>For more info, please visit http://www.developer.nokia.com/Community/Wiki/How_to_launch_apps_available_in_the_store_using_NFC_LaunchApp_tag#How_to_write_LaunchApp_content_into_a_NFC_tag
+            </TextBlock>
+            <Button Content="Start"  Click="StartTagMaking" Grid.Row="1"></Button>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
